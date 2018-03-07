@@ -33,5 +33,4 @@ To train the model afresh and then generate, run:
 python charseqrnn.py
 ```
 
-
-Note: no pretrained file yet, I'll do it soon
+If training new model just check and change the filename in the save function to avoid overwriting the currently pre-trained model. I'll add functionality to pass filename to save the model later

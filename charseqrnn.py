@@ -76,7 +76,7 @@ class CharSeqModel():
             'args': self.args,
             'state_dict': self.model.state_dict()
         }
-        torch.save(state, 'pretrained/model.pth.tar')
+        torch.save(state, 'pretrained/model2.pth.tar')
         print("Saved.")
 
     def load(self):
@@ -108,6 +108,7 @@ if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--pretrained', type=bool, default=False)
+    parser.add_argument('-l', '--text_length', type=int, default=500)
     args = parser.parse_args()
 
     # n_chars is global from utils
@@ -121,5 +122,5 @@ if __name__ == '__main__':
     if not pretrained:
         losses = model.train(batch_size, epochs)
     # can plot losses
-
-    model.run('\n', 500, 0.2)
+    length = args.text_length
+    print(model.run('\n', length, 0.3))
