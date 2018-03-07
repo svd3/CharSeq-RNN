@@ -23,3 +23,15 @@ The prove the sunter the string the stoon the wo
 
 ```
 We can see it has learnt the structure of narration and except a few, most of the words are meaningful.  
+
+To generate Shakespearean text directly from pre-trained model, run:
+```
+python charseqrnn.py -p True
+```
+To train the model afresh and then generate, run:
+```
+python charseqrnn.py
+```
+
+
+Note: no pretrained file yet, I'll do it soon
